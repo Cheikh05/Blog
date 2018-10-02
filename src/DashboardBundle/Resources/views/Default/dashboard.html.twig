@@ -1,0 +1,63 @@
+{% extends 'blog.template.html.twig' %}
+{% block body %}
+
+<div class="container-fluid">
+    <div class="col-md-3 dashboard-left">
+        <img src="../img/img.jpeg" width="100px" height="100px" class="img-circle">
+        {% if username != "" %}
+
+            <h4 class="text-center">{{ username }}</h4>
+        {% endif %}
+        <hr>
+        <p>
+            <button class="btn btn-primary btn-block"><span class="
+glyphicon glyphicon-plus"></span> Nouveau article </button>
+        </p>
+        <p>
+            <button class="btn btn-primary btn-block">Article récent </button>
+        </p>
+        <p>
+           <button class="btn btn-primary btn-block">Tous les articles <span class="badge">15</span></button>
+        </p>
+        <p>
+           <button class="btn btn-primary btn-block">Vos Commentaires <span class="badge">5</span></button>
+        </p>
+        <p>
+            <button class="btn btn-primary btn-block"> <span class="glyphicon glyphicon-wrench"></span> Paramétres</button>
+        </p>
+        <p>
+            <button class="btn btn-default btn-block btn-deconnexion">  Deconnexion</button>
+        </p>
+
+
+    </div>
+    <div class="col-md-8 dashboard-right">
+     <div class="row">
+      <div class="col-md-6">
+          <div class="panel panel-primary">
+              <div class="panel-heading">Nouveau articles</div>
+              <div class="panel-body">
+                  {{ form(formArticle) }}
+
+              </div>
+          </div>
+      </div>
+         <div class="col-md-5">
+             <div class="panel panel-primary">
+                 <div class="panel-heading">Dernier article</div>
+                 <div class="panel-body"></div>
+             </div>
+         </div>
+     </div>
+        <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Liste des articles</div>
+                <div class="panel-body"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

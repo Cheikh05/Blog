@@ -1,0 +1,6 @@
+dashboard_homepage:
+    path:     /dashbord
+    defaults: { _controller: DashboardBundle:Default:index }
+article_homepage:
+    path: /addArticle
+    defaults: { _controller: DashboardBundle:Default:artcile}

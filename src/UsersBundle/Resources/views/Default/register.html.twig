@@ -1,0 +1,29 @@
+{% extends 'blog.template.html.twig' %}
+
+{% block body %}
+
+ {# {{ parent() }} #}
+<div class="content-users-register container">
+
+<div class="col-md-6">
+<h3 class="text-info">Inscrivez vous</h3>
+    {{ form(form) }}
+</div>
+    <div class="col-md-6 content-users-register-right">
+        {% if modeAuth == true %}
+        <div>
+            <h2 class="text-info">Authentification</h2>
+            {{ form(formLogin) }}
+        </div>
+         {% endif %}
+        <a href="{{  path('users_login') }}"><button class="btn btn-block" onclick="modeAuth == true">S'authentification</button></a>
+        <div class="jumbotron">
+
+            <h3 class="text-center">S'inscrire dans ce Blog vous permettrait d'éditer ,de publier des articles ains de faire des commentaires mais aussi  ça vous permettra de pouvoir publier un article vers les réseaux sociaux comme Linkedin.</h3>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

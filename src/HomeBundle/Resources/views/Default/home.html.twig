@@ -1,0 +1,42 @@
+{% extends 'blog.template.html.twig' %}
+{% block body %}
+  <div class="container-fluid">
+  <div class="col-md-11 content-home">
+   <form class="form form-inline form-search">
+     
+     <input type="text" name="key_search" class="search form-control" placeholder="Chercher un article parmis +10000 articles"/>
+     <select class="form-control">
+        <option value="all">Selectionnez une catégorie</option>
+        <option value="">Formation</option>
+        <option value="">Actualite</option>
+        <option value="">Informatique</option>
+        <option value="">Video</option>
+        <option value="">Sport</option>
+     </select>
+     <button class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+
+   <form>
+  </div>
+
+
+      <div class="col-md-8 content-home-left">
+          {% for article in articles %}
+         <div class="content-article">
+             <img src="{{ article->imageUrl }}" width="100%" height="200px">
+            <h3 class="text-center">{{ article->titre }}</h3>
+             <p> {{ article->description }}  </p>
+             <p>Date de publication : <b>{{ article->dateParution }}</b></p>
+             <p> Edité par : <span class="glyphicon glyphicon-user"></span> {{ article->auteur }}</p>
+
+         </div>
+
+          {% endfor %}
+      </div>
+
+      <div class="col-md-4 content-home-right">
+          <p class="text-info"> Fil d'actalité >> </p>
+          <hr>
+
+      </div>
+  </div>
+{% endblock %}

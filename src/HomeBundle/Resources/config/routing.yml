@@ -1,0 +1,10 @@
+home_homepage:
+    path:     /blog
+    defaults: { _controller: HomeBundle:Default:index }
+
+
+
+about_homepage:
+    path: /apropos
+    defaults: { _controller: HomeBundle:Default:apropos}
+
